@@ -1,0 +1,149 @@
+{
+  "response_time_ms": 1080.364,
+  "request": {
+    "method": "POST",
+    "url": "https://api.openai.com/v1/responses",
+    "headers": {
+      "User-Agent": "python-requests/2.34.2",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept": "*/*",
+      "Connection": "keep-alive",
+      "Authorization": "[REDACTED]",
+      "Content-Length": "132",
+      "Content-Type": "application/json"
+    },
+    "payload": {
+      "model": "gpt-6-luna",
+      "reasoning": {
+        "effort": "none"
+      },
+      "instructions": "Answer clearly and briefly.",
+      "input": "Say test passed."
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "Date": "Sat, 31 Oct 2026 14:27:09 GMT",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "CF-Ray": "a53356b88f646214-ORD",
+      "CF-Cache-Status": "DYNAMIC",
+      "Server": "cloudflare",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "access-control-expose-headers": "X-Request-ID, Server-Timing-Total, CF-Ray, CF-Ray",
+      "openai-organization": "user-zbibpmx3et67etuhkxs4mutk",
+      "openai-processing-ms": "840",
+      "openai-project": "proj_cAbnHXo4jUvpAQtFvG4Ysdsk",
+      "openai-version": "2020-10-01",
+      "x-ratelimit-limit-requests": "5000",
+      "x-ratelimit-limit-tokens": "2000000",
+      "x-ratelimit-remaining-requests": "4999",
+      "x-ratelimit-remaining-tokens": "2000000",
+      "x-ratelimit-reset-requests": "12ms",
+      "x-ratelimit-reset-tokens": "0s",
+      "x-request-id": "req_638814388b2c4290860ab80c49fa2145",
+      "set-cookie": "[REDACTED]",
+      "Content-Encoding": "gzip",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "payload": {
+      "id": "resp_0ae2f21807c499c2006ae5fabc4e3887d188ac379e2f238d4d",
+      "object": "response",
+      "created_at": 1793456828,
+      "status": "completed",
+      "access_programs": null,
+      "background": false,
+      "billing": {
+        "payer": "developer"
+      },
+      "completed_at": 1793456828,
+      "error": null,
+      "frequency_penalty": 0.0,
+      "incomplete_details": null,
+      "instructions": "Answer clearly and briefly.",
+      "max_output_tokens": null,
+      "max_tool_calls": null,
+      "model": "gpt-6-luna",
+      "moderation": null,
+      "output": [
+        {
+          "id": "msg_0ae2f21807c499c2006ae5fabced0887d1ac7ddf51451110be",
+          "type": "message",
+          "status": "completed",
+          "content": [
+            {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "test passed"
+            }
+          ],
+          "phase": "final_answer",
+          "role": "assistant"
+        }
+      ],
+      "parallel_tool_calls": true,
+      "presence_penalty": 0.0,
+      "previous_response_id": null,
+      "prompt_cache_key": null,
+      "prompt_cache_retention": "24h",
+      "reasoning": {
+        "context": "all_turns",
+        "effort": "none",
+        "mode": "standard",
+        "summary": null
+      },
+      "safety_identifier": null,
+      "service_tier": "default",
+      "store": true,
+      "temperature": 1.0,
+      "text": {
+        "format": {
+          "type": "text"
+        },
+        "verbosity": "medium"
+      },
+      "tool_choice": "auto",
+      "tool_usage": {
+        "image_gen": {
+          "input_tokens": 0,
+          "input_tokens_details": {
+            "image_tokens": 0,
+            "text_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "image_tokens": 0,
+            "text_tokens": 0
+          },
+          "total_tokens": 0
+        },
+        "web_search": {
+          "num_requests": 0
+        }
+      },
+      "tools": [],
+      "top_logprobs": 0,
+      "top_p": 0.98,
+      "truncation": "disabled",
+      "usage": {
+        "input_tokens": 19,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 6,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 25
+      },
+      "user": null,
+      "metadata": {}
+    }
+  },
+  "example_stdout": "test passed"
+}

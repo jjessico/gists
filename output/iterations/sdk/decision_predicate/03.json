@@ -1,0 +1,91 @@
+{
+  "response_time_ms": 182.366,
+  "request": {
+    "method": "POST",
+    "url": "https://api.openai.com/v1/decisions",
+    "headers": {
+      "host": "api.openai.com",
+      "accept-encoding": "gzip, deflate",
+      "connection": "keep-alive",
+      "authorization": "[REDACTED]",
+      "accept": "application/json",
+      "content-type": "application/json",
+      "user-agent": "OpenAI/Python 3.41.0",
+      "x-stainless-lang": "python",
+      "x-stainless-package-version": "3.41.0",
+      "x-stainless-os": "MacOS",
+      "x-stainless-arch": "arm64",
+      "x-stainless-runtime": "CPython",
+      "x-stainless-runtime-version": "3.13.13",
+      "x-stainless-async": "false",
+      "x-stainless-raw-response": "true",
+      "x-stainless-retry-count": "0",
+      "x-stainless-read-timeout": "600",
+      "content-length": "214"
+    },
+    "payload": {
+      "model": "gpt-6-luna",
+      "input": "I was charged twice for one order.",
+      "questions": [
+        {
+          "type": "predicate",
+          "name": "reports_duplicate_charge",
+          "instructions": "Does the message report that the customer was charged twice?"
+        }
+      ]
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "date": "Sat, 31 Oct 2026 14:26:03 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "x-ratelimit-limit-requests": "5000",
+      "x-ratelimit-limit-tokens": "2000000",
+      "x-ratelimit-remaining-requests": "4999",
+      "x-ratelimit-remaining-tokens": "1999832",
+      "x-ratelimit-reset-requests": "12ms",
+      "x-ratelimit-reset-tokens": "5ms",
+      "vary": "origin, access-control-request-method, access-control-request-headers",
+      "access-control-allow-origin": "*",
+      "access-control-expose-headers": "x-request-id,retry-after,server-timing-total, CF-Ray",
+      "server-timing-total": "93.711",
+      "openai-processing-ms": "93",
+      "x-request-id": "req_0e97a580173646e89f38a606b06fc31a",
+      "x-openai-proxy-wasm": "v0.1",
+      "server": "cloudflare",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "[REDACTED]",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff",
+      "content-encoding": "gzip",
+      "cf-ray": "a53355207d7fc01a-ATL",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "payload": {
+      "model": "gpt-6-luna",
+      "answers": [
+        {
+          "type": "predicate",
+          "name": "reports_duplicate_charge",
+          "probability": 1.0
+        }
+      ],
+      "usage": {
+        "input_tokens": 167,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 167
+      }
+    }
+  },
+  "example_stdout": "{\n  \"name\": \"reports_duplicate_charge\",\n  \"probability\": 1.0,\n  \"type\": \"predicate\"\n}\nEstimated probability: 1.000"
+}

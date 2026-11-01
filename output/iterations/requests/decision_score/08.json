@@ -1,0 +1,112 @@
+{
+  "response_time_ms": 245.625,
+  "request": {
+    "method": "POST",
+    "url": "https://api.openai.com/v1/decisions",
+    "headers": {
+      "User-Agent": "python-requests/2.34.2",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept": "*/*",
+      "Connection": "keep-alive",
+      "Authorization": "[REDACTED]",
+      "Content-Length": "472",
+      "Content-Type": "application/json"
+    },
+    "payload": {
+      "model": "gpt-6-luna",
+      "input": "Checkout fails for every customer with no workaround.",
+      "questions": [
+        {
+          "type": "score",
+          "name": "severity",
+          "instructions": "How severe is this issue for the affected user?",
+          "levels": [
+            {
+              "label": "Cosmetic",
+              "description": "Appearance only; no lost functionality."
+            },
+            {
+              "label": "Workaround available",
+              "description": "A task fails, but another way works."
+            },
+            {
+              "label": "Fully blocked",
+              "description": "A task fails with no workaround."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "Date": "Sat, 31 Oct 2026 14:27:10 GMT",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "x-ratelimit-limit-requests": "5000",
+      "x-ratelimit-limit-tokens": "2000000",
+      "x-ratelimit-remaining-requests": "4999",
+      "x-ratelimit-remaining-tokens": "1999849",
+      "x-ratelimit-reset-requests": "12ms",
+      "x-ratelimit-reset-tokens": "4ms",
+      "vary": "origin, access-control-request-method, access-control-request-headers",
+      "access-control-allow-origin": "*",
+      "access-control-expose-headers": "x-request-id,retry-after,server-timing-total, CF-Ray",
+      "server-timing-total": "166.959",
+      "openai-processing-ms": "167",
+      "x-request-id": "req_0f5c2914b88a45d491e6af72cfb90743",
+      "x-openai-proxy-wasm": "v0.1",
+      "Server": "cloudflare",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "[REDACTED]",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "Content-Encoding": "gzip",
+      "CF-RAY": "a53356c4dd2391e4-ATL",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "payload": {
+      "model": "gpt-6-luna",
+      "answers": [
+        {
+          "type": "score",
+          "name": "severity",
+          "score": 2.0,
+          "probabilities": [
+            {
+              "value": 0,
+              "label": "Cosmetic",
+              "probability": 0.0
+            },
+            {
+              "value": 1,
+              "label": "Workaround available",
+              "probability": 0.0
+            },
+            {
+              "value": 2,
+              "label": "Fully blocked",
+              "probability": 1.0
+            }
+          ],
+          "confidence": 1.0
+        }
+      ],
+      "usage": {
+        "input_tokens": 150,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 150
+      }
+    }
+  },
+  "example_stdout": "{\n  \"type\": \"score\",\n  \"name\": \"severity\",\n  \"score\": 2.0,\n  \"probabilities\": [\n    {\n      \"value\": 0,\n      \"label\": \"Cosmetic\",\n      \"probability\": 0.0\n    },\n    {\n      \"value\": 1,\n      \"label\": \"Workaround available\",\n      \"probability\": 0.0\n    },\n    {\n      \"value\": 2,\n      \"label\": \"Fully blocked\",\n      \"probability\": 1.0\n    }\n  ],\n  \"confidence\": 1.0\n}\nWeighted severity (0–2): 2.000 (confidence: 1.000)"
+}

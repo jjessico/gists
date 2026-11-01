@@ -1,0 +1,118 @@
+{
+  "response_time_ms": 286.702,
+  "request": {
+    "method": "POST",
+    "url": "https://api.openai.com/v1/decisions",
+    "headers": {
+      "host": "api.openai.com",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1",
+      "authorization": "[REDACTED]",
+      "content-length": "464",
+      "content-type": "application/json"
+    },
+    "payload": {
+      "model": "gpt-6-luna",
+      "input": "I cannot sign in to my account.",
+      "questions": [
+        {
+          "type": "choice",
+          "name": "support_queue",
+          "instructions": "Which support queue should handle this message?",
+          "choices": [
+            {
+              "value": "billing",
+              "description": "Payments, invoices, and refunds."
+            },
+            {
+              "value": "technical",
+              "description": "Problems using the product."
+            },
+            {
+              "value": "account",
+              "description": "Sign-in and account access."
+            },
+            {
+              "value": "other",
+              "description": "Anything outside these categories."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "date": "Sat, 31 Oct 2026 14:27:06 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "x-ratelimit-limit-requests": "5000",
+      "x-ratelimit-limit-tokens": "2000000",
+      "x-ratelimit-remaining-requests": "4999",
+      "x-ratelimit-remaining-tokens": "1999851",
+      "x-ratelimit-reset-requests": "12ms",
+      "x-ratelimit-reset-tokens": "4ms",
+      "vary": "origin, access-control-request-method, access-control-request-headers",
+      "access-control-allow-origin": "*",
+      "access-control-expose-headers": "x-request-id,retry-after,server-timing-total, CF-Ray",
+      "server-timing-total": "89.629",
+      "openai-processing-ms": "89",
+      "x-request-id": "req_0998f4e9bd024f32a87279f6f427b1a7",
+      "x-openai-proxy-wasm": "v0.1",
+      "server": "cloudflare",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "[REDACTED]",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff",
+      "content-encoding": "gzip",
+      "cf-ray": "a53356aedb34e566-ORD",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "payload": {
+      "model": "gpt-6-luna",
+      "answers": [
+        {
+          "type": "choice",
+          "name": "support_queue",
+          "choice": "account",
+          "probabilities": [
+            {
+              "value": "billing",
+              "probability": 0.0
+            },
+            {
+              "value": "technical",
+              "probability": 0.0
+            },
+            {
+              "value": "account",
+              "probability": 1.0
+            },
+            {
+              "value": "other",
+              "probability": 0.0
+            }
+          ],
+          "confidence": 1.0
+        }
+      ],
+      "usage": {
+        "input_tokens": 148,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 148
+      }
+    }
+  },
+  "example_stdout": "{\n  \"type\": \"choice\",\n  \"name\": \"support_queue\",\n  \"choice\": \"account\",\n  \"probabilities\": [\n    {\n      \"value\": \"billing\",\n      \"probability\": 0.0\n    },\n    {\n      \"value\": \"technical\",\n      \"probability\": 0.0\n    },\n    {\n      \"value\": \"account\",\n      \"probability\": 1.0\n    },\n    {\n      \"value\": \"other\",\n      \"probability\": 0.0\n    }\n  ],\n  \"confidence\": 1.0\n}\nSelected queue: account (confidence: 1.000)"
+}

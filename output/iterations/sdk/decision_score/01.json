@@ -1,0 +1,123 @@
+{
+  "response_time_ms": 235.398,
+  "request": {
+    "method": "POST",
+    "url": "https://api.openai.com/v1/decisions",
+    "headers": {
+      "host": "api.openai.com",
+      "accept-encoding": "gzip, deflate",
+      "connection": "keep-alive",
+      "authorization": "[REDACTED]",
+      "accept": "application/json",
+      "content-type": "application/json",
+      "user-agent": "OpenAI/Python 3.41.0",
+      "x-stainless-lang": "python",
+      "x-stainless-package-version": "3.41.0",
+      "x-stainless-os": "MacOS",
+      "x-stainless-arch": "arm64",
+      "x-stainless-runtime": "CPython",
+      "x-stainless-runtime-version": "3.13.13",
+      "x-stainless-async": "false",
+      "x-stainless-raw-response": "true",
+      "x-stainless-retry-count": "0",
+      "x-stainless-read-timeout": "600",
+      "content-length": "449"
+    },
+    "payload": {
+      "model": "gpt-6-luna",
+      "input": "Checkout fails for every customer with no workaround.",
+      "questions": [
+        {
+          "type": "score",
+          "name": "severity",
+          "instructions": "How severe is this issue for the affected user?",
+          "levels": [
+            {
+              "label": "Cosmetic",
+              "description": "Appearance only; no lost functionality."
+            },
+            {
+              "label": "Workaround available",
+              "description": "A task fails, but another way works."
+            },
+            {
+              "label": "Fully blocked",
+              "description": "A task fails with no workaround."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "date": "Sat, 31 Oct 2026 14:25:41 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "x-ratelimit-limit-requests": "5000",
+      "x-ratelimit-limit-tokens": "2000000",
+      "x-ratelimit-remaining-requests": "4999",
+      "x-ratelimit-remaining-tokens": "1999849",
+      "x-ratelimit-reset-requests": "12ms",
+      "x-ratelimit-reset-tokens": "4ms",
+      "vary": "origin, access-control-request-method, access-control-request-headers",
+      "access-control-allow-origin": "*",
+      "access-control-expose-headers": "x-request-id,retry-after,server-timing-total, CF-Ray",
+      "server-timing-total": "64.489",
+      "openai-processing-ms": "64",
+      "x-request-id": "req_7e9531784b6f447dadf28b57384694e1",
+      "x-openai-proxy-wasm": "v0.1",
+      "server": "cloudflare",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "[REDACTED]",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff",
+      "content-encoding": "gzip",
+      "cf-ray": "a533549c8b448fc2-ORD",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "payload": {
+      "model": "gpt-6-luna",
+      "answers": [
+        {
+          "type": "score",
+          "name": "severity",
+          "score": 2.0,
+          "probabilities": [
+            {
+              "value": 0,
+              "label": "Cosmetic",
+              "probability": 0.0
+            },
+            {
+              "value": 1,
+              "label": "Workaround available",
+              "probability": 0.0
+            },
+            {
+              "value": 2,
+              "label": "Fully blocked",
+              "probability": 1.0
+            }
+          ],
+          "confidence": 1.0
+        }
+      ],
+      "usage": {
+        "input_tokens": 150,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 150
+      }
+    }
+  },
+  "example_stdout": "{\n  \"confidence\": 1.0,\n  \"name\": \"severity\",\n  \"probabilities\": [\n    {\n      \"label\": \"Cosmetic\",\n      \"probability\": 0.0,\n      \"value\": 0\n    },\n    {\n      \"label\": \"Workaround available\",\n      \"probability\": 0.0,\n      \"value\": 1\n    },\n    {\n      \"label\": \"Fully blocked\",\n      \"probability\": 1.0,\n      \"value\": 2\n    }\n  ],\n  \"score\": 2.0,\n  \"type\": \"score\"\n}\nWeighted severity (0–2): 2.000 (confidence: 1.000)"
+}

@@ -1,0 +1,97 @@
+{
+  "response_time_ms": 698.483,
+  "request": {
+    "method": "POST",
+    "url": "https://api.openai.com/v1/chat/completions",
+    "headers": {
+      "User-Agent": "python-requests/2.34.2",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept": "*/*",
+      "Connection": "keep-alive",
+      "Authorization": "[REDACTED]",
+      "Content-Length": "179",
+      "Content-Type": "application/json"
+    },
+    "payload": {
+      "model": "gpt-6-luna",
+      "reasoning_effort": "none",
+      "messages": [
+        {
+          "role": "developer",
+          "content": "Answer clearly and briefly."
+        },
+        {
+          "role": "user",
+          "content": "Say test passed."
+        }
+      ]
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "Date": "Sat, 31 Oct 2026 14:26:56 GMT",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "CF-Ray": "a5335668f8bfe82e-ORD",
+      "CF-Cache-Status": "DYNAMIC",
+      "Server": "cloudflare",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "access-control-expose-headers": "X-Request-ID, CF-Ray, CF-Ray",
+      "openai-organization": "user-zbibpmx3et67etuhkxs4mutk",
+      "openai-processing-ms": "502",
+      "openai-project": "proj_cAbnHXo4jUvpAQtFvG4Ysdsk",
+      "openai-version": "2020-10-01",
+      "x-openai-proxy-wasm": "v0.1",
+      "x-ratelimit-limit-requests": "5000",
+      "x-ratelimit-limit-tokens": "2000000",
+      "x-ratelimit-remaining-requests": "4999",
+      "x-ratelimit-remaining-tokens": "1999986",
+      "x-ratelimit-reset-requests": "12ms",
+      "x-ratelimit-reset-tokens": "0s",
+      "x-request-id": "req_0f9856f9b10042b995dd010c46fa882e",
+      "set-cookie": "[REDACTED]",
+      "Content-Encoding": "gzip",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "payload": {
+      "id": "chatcmpl-Ef4Kl0qLmicvqH6ntyCzrg6R4BtDP",
+      "object": "chat.completion",
+      "created": 1793456815,
+      "model": "gpt-6-luna",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "test passed",
+            "refusal": null,
+            "annotations": []
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 19,
+        "completion_tokens": 5,
+        "total_tokens": 24,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "service_tier": "default",
+      "system_fingerprint": null
+    }
+  },
+  "example_stdout": "test passed"
+}

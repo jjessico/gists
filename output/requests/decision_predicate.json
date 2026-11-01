@@ -1,0 +1,79 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://api.openai.com/v1/decisions",
+    "headers": {
+      "User-Agent": "python-requests/2.34.2",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept": "*/*",
+      "Connection": "keep-alive",
+      "Authorization": "[REDACTED]",
+      "Content-Length": "224",
+      "Content-Type": "application/json"
+    },
+    "payload": {
+      "model": "gpt-6-luna",
+      "input": "I was charged twice for one order.",
+      "questions": [
+        {
+          "type": "predicate",
+          "name": "reports_duplicate_charge",
+          "instructions": "Does the message report that the customer was charged twice?"
+        }
+      ]
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "Date": "Sat, 31 Oct 2026 14:22:09 GMT",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "x-ratelimit-limit-requests": "5000",
+      "x-ratelimit-limit-tokens": "2000000",
+      "x-ratelimit-remaining-requests": "4999",
+      "x-ratelimit-remaining-tokens": "1999832",
+      "x-ratelimit-reset-requests": "12ms",
+      "x-ratelimit-reset-tokens": "5ms",
+      "vary": "origin, access-control-request-method, access-control-request-headers",
+      "access-control-allow-origin": "*",
+      "access-control-expose-headers": "x-request-id,retry-after,server-timing-total, CF-Ray",
+      "server-timing-total": "148.430",
+      "openai-processing-ms": "148",
+      "x-request-id": "req_34337ecec9ac48a29645520ff56c127a",
+      "x-openai-proxy-wasm": "v0.1",
+      "Server": "cloudflare",
+      "cf-cache-status": "DYNAMIC",
+      "set-cookie": "[REDACTED]",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "Content-Encoding": "gzip",
+      "CF-RAY": "a5334f6cf82c9127-ORD",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "payload": {
+      "model": "gpt-6-luna",
+      "answers": [
+        {
+          "type": "predicate",
+          "name": "reports_duplicate_charge",
+          "probability": 1.0
+        }
+      ],
+      "usage": {
+        "input_tokens": 167,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 167
+      }
+    }
+  },
+  "example_stdout": "{\n  \"type\": \"predicate\",\n  \"name\": \"reports_duplicate_charge\",\n  \"probability\": 1.0\n}\nEstimated probability: 1.000"
+}
